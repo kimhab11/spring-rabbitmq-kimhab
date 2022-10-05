@@ -1,4 +1,4 @@
-package com.example.springrabbitmqkimhab;
+package com.example.springrabbitmqkimhab.Test;
 
 import org.springframework.amqp.core.Queue;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
