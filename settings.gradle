@@ -1,1 +1,4 @@
 rootProject.name = 'spring-rabbitmq-kimhab'
+include 'spring-rabbitmq-kimhab','rb-consumer'
+include 'rb-publisher'
+

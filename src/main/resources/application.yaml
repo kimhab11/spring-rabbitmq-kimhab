@@ -1,7 +1,16 @@
 server:
   port: 7070
-
 spring:
+  cloud:
+    stream:
+      bindings:
+#        foodOrdersChannel:
+#          destination: foodOrders
+#        output:
+#          destination: foodOrders
+        input:
+          destination: foodOrders
+          group: foodOrdersIntakeGroup
   rabbitmq:
     host: localhost
     port: 5672
@@ -9,4 +18,4 @@ spring:
     password: guest
 
 queue:
-   name: test
+  name: test
