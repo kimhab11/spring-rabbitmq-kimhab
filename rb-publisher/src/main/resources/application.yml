@@ -1,6 +1,13 @@
 server:
   port: 8080
+management:
+  security:
+    enabled: false
 spring:
+  config:
+    import: configserver:http://localhost:8888
+  application:
+    name: rb-publisher
   jackson:
     date-format: yyyy-MM-dd HH:mm:ss
   rabbitmq:
@@ -10,6 +17,8 @@ spring:
     password: guest
 
   cloud:
+    config:
+     uri: http://localhost:8888
     stream:
       bindings:
         foodOrdersChannel:

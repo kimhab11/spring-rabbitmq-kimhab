@@ -1,6 +1,9 @@
+
 server:
   port: 0
 spring:
+  config:
+    import: optional:configserver:http://localhost:8888
   rabbitmq:
     host: localhost
     port: 5672
@@ -13,3 +16,7 @@ spring:
         input:
           destination: foodOrders
           group: foodOrdersIntakeGroup
+  application:
+    name: rb-consumer
+  profiles:
+    active: uat
