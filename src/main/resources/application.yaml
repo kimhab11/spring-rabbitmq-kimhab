@@ -16,6 +16,18 @@ spring:
     port: 5672
     username: guest
     password: guest
+  application:
+    name: rabbit-app
 
+# actuator endpoints are not exposed by default
+management:
+  security:
+    enabled: false
+  endpoints:
+    web:
+      exposure:
+        include: "*"
 queue:
-  name: test
+  name: kimhab-queue-test
+
+
