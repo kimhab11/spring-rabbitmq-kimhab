@@ -1,16 +1,28 @@
 server:
   port: 7070
 spring:
+  config:
+    import: optional:configserver:http://localhost:8888
   cloud:
+    bus:
+      enabled: true
+      refresh:
+        enabled: true
+      trace:
+        enabled: true
+      env:
+        enabled: true
     stream:
       bindings:
-#        foodOrdersChannel:
-#          destination: foodOrders
-#        output:
-#          destination: foodOrders
+        #        foodOrdersChannel:
+        #          destination: foodOrders
+        #        output:
+        #          destination: foodOrders
         input:
           destination: foodOrders
           group: foodOrdersIntakeGroup
+
+  # connect to Rabbit
   rabbitmq:
     host: localhost
     port: 5672
@@ -23,11 +35,24 @@ spring:
 management:
   security:
     enabled: false
+  endpoint:
+    shutdown:
+      enabled: false
   endpoints:
     web:
       exposure:
         include: "*"
+        exclude: loggers
+
+# create queue
 queue:
   name: kimhab-queue-test
 
-
+endpoints:
+  spring:
+    cloud:
+      bus:
+        env:
+          enabled: true
+        refresh:
+          enabled: true

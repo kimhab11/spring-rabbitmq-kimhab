@@ -1,5 +1,6 @@
 
 server:
+  # run random port
   port: 0
 spring:
   config:

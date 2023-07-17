@@ -1,8 +1,8 @@
 package com.example;
 
-import ch.qos.logback.core.joran.util.beans.BeanUtil;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.integration.support.MessageBuilder;
 import org.springframework.web.bind.annotation.*;
 

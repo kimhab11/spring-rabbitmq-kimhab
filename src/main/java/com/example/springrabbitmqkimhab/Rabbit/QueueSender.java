@@ -1,4 +1,4 @@
-package com.example.springrabbitmqkimhab.Test;
+package com.example.springrabbitmqkimhab.Rabbit;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.amqp.core.Queue;
@@ -19,5 +19,6 @@ public class QueueSender {
     public void send(String order) {
         rabbitTemplate.convertAndSend(this.queue.getName(), order);
         log.info("Order: {}" , order);
+        log.info("Queue's name : {}" , queue.getName());
     }
 }
